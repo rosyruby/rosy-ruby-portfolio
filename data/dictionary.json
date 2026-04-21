@@ -1,0 +1,146 @@
+{
+  "jp": {
+    "brand": "RosyRuby",
+    "toggleLabel": "言語",
+    "heroBadge": "Soft Minimal Portfolio",
+    "heroTitle": "RosyRuby's Jewelry Box",
+    "heroDescription": "自作ツールやリンクをまとめたポートフォリオサイトです。",
+    "sections": {
+      "about": "About",
+      "tools": "Tools",
+      "websites": "Websites",
+      "links": "Links",
+      "contact": "Contact"
+    },
+    "about": {
+      "title": "テクノロジーに華やかさと使いやすさを",
+      "career": "一部上場企業にてエンジニアとして6年間勤務後、現在は個人開発フリーランスとして活動中。技術力をベースにAIを駆使して、日常を便利に、そして華やかに彩るプロダクトを制作しています。",
+      "skillsTitle": "専門スキル",
+      "skills": [
+        "Automation: Google Apps Script (GAS) / Python",
+        "AI Integration: Gemini API / AIを活用した効率化",
+        "Modern Dev Tools: Cursor / Next.js / Tailwind CSS",
+        "Productivity: Notion テンプレート制作 / 業務改善"
+      ],
+      "fastCoding": "Cursorを駆使した高速コーディング可能"
+    },
+    "contact": {
+      "description": "ご相談・制作依頼・コラボのお問い合わせは、こちらからお気軽にご連絡ください。",
+      "name": "お名前",
+      "email": "メールアドレス",
+      "message": "メッセージ",
+      "cta": "メールはこちら",
+      "formButton": "送信する"
+    },
+    "privacy": {
+      "link": "プライバシーポリシー",
+      "title": "プライバシーポリシー",
+      "body": "本サイトでは、お問い合わせ時に入力された情報（名前・メールアドレス・メッセージ）を連絡対応およびサービス改善の目的で利用します。また、アクセス解析のために Google アナリティクスを利用し、クッキー等を通じて匿名の利用情報を収集する場合があります。取得した情報は適切に管理し、法令に基づく場合を除いて第三者に提供しません。"
+    },
+    "terms": {
+      "link": "利用規約・免責事項",
+      "title": "利用規約・免責事項",
+      "body": "【著作権について】当サイトで公開しているツール、テンプレート、コンテンツの著作権は RosyRuby に帰属します。私的利用の範囲を超えた無断転載・再配布・販売は禁止しております。【免責事項】公開しているツールや情報の利用によって生じたトラブルや損害について、制作者は一切の責任を負いかねます。あらかじめご了承ください。"
+    },
+    "tools": [
+      {
+        "title": "コマワリ時間割作成ツール",
+        "description": "細かい時間割を直感的に作成できる、シンプルなプランニングツール。"
+      },
+      {
+        "title": "tailwindCSS作成ツール",
+        "description": "必要なユーティリティをすばやく組み立てる、スタイル生成サポート。"
+      },
+      {
+        "title": "Notionテンプレート",
+        "description": "学習や制作管理に使える、実用的なNotionテンプレート集。"
+      },
+      {
+        "title": "World Sky Clock",
+        "description": "好きな都市を追加して確認できる、ミニマルな世界時計プレースホルダー。"
+      }
+    ],
+    "websites": [
+      {
+        "title": "世界一やさしいIT用語解説",
+        "description": "初心者向けにIT用語をかみくだいて説明する、やさしい解説サイト。"
+      },
+      {
+        "title": "うごく英単語サイト",
+        "description": "アニメーションで記憶を助ける、視覚的に学べる英単語サイト。"
+      }
+    ]
+  },
+  "en": {
+    "brand": "RosyRuby",
+    "toggleLabel": "Language",
+    "heroBadge": "Soft Minimal Portfolio",
+    "heroTitle": "RosyRuby's Jewelry Box",
+    "heroDescription": "Hi, I'm RosyRuby. A portfolio focused on refined cuteness, featuring projects, tools, and learning notes. I care about calm, friendly, and practical user experiences.",
+    "sections": {
+      "about": "About",
+      "tools": "Tools",
+      "websites": "Websites",
+      "links": "Links",
+      "contact": "Contact"
+    },
+    "about": {
+      "title": "Bringing elegance and usability to technology",
+      "career": "Full-stack Engineer with 6 years of experience at a listed company, involved in large-scale system development while also running RosyRuby as an indie creator. Built on solid production-grade engineering, I craft products that make daily life a little more efficient and a little more delightful.",
+      "skillsTitle": "Core Expertise",
+      "skills": [
+        "Automation: Google Apps Script (GAS) / Python",
+        "AI Integration: Gemini API / AI-powered workflows",
+        "Modern Dev Tools: Cursor / Next.js / Tailwind CSS",
+        "Productivity: Notion template design / workflow improvement"
+      ],
+      "fastCoding": "Fast shipping with Cursor-driven coding workflows"
+    },
+    "contact": {
+      "description": "For inquiries, project requests, or collaborations, feel free to contact me anytime.",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "cta": "Email Me",
+      "formButton": "Send Message"
+    },
+    "privacy": {
+      "link": "Privacy Policy",
+      "title": "Privacy Policy",
+      "body": "This site uses the information entered in the contact form (name, email address, and message) to respond to inquiries and improve our services. We also use Google Analytics to collect anonymous usage data via cookies for access analysis. Collected information is managed appropriately and will not be shared with third parties except when required by law."
+    },
+    "terms": {
+      "link": "Terms & Disclaimer",
+      "title": "Terms & Disclaimer",
+      "body": "Copyright: All tools, templates, and content published on this site are copyrighted by RosyRuby. Unauthorized reproduction, redistribution, or sale beyond personal use is prohibited. Disclaimer: The creator is not responsible for any trouble or damage caused by the use of the tools or information provided on this site. Please use them at your own risk."
+    },
+    "tools": [
+      {
+        "title": "Komawari Timetable Maker",
+        "description": "A simple planner for building detailed schedules with an intuitive flow."
+      },
+      {
+        "title": "Tailwind CSS Builder",
+        "description": "A helper tool to quickly compose utility styles for UI prototyping."
+      },
+      {
+        "title": "Notion Template Links",
+        "description": "A curated collection of practical Notion templates for study and creation."
+      },
+      {
+        "title": "Empty World Clock",
+        "description": "A minimal world-clock placeholder where you can add your favorite cities."
+      }
+    ],
+    "websites": [
+      {
+        "title": "The Kindest IT Terms Guide",
+        "description": "A beginner-friendly website that explains technical terms in plain language."
+      },
+      {
+        "title": "Animated English Vocabulary",
+        "description": "A visual vocabulary website that uses motion to make memorization easier."
+      }
+    ]
+  }
+}

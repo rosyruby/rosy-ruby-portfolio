@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff8fa;
+  --foreground: #34121b;
+  --rose-soft: #ffe8f1;
+  --ruby: #b0124f;
+  --ruby-dark: #7a0835;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-noto-sans-jp);
+  --font-display: var(--font-playfair-display);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-sans-jp), "Noto Sans JP", sans-serif;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 30px rgba(176, 18, 79, 0.14);
+}
+
+.font-display {
+  font-family: var(--font-playfair-display), "Times New Roman", serif;
+}
+
+.gem-toggle {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  border: 1px solid rgba(176, 18, 79, 0.42);
+}
+
+.shine-card::after {
+  content: "";
+  position: absolute;
+  top: -130%;
+  left: -55%;
+  width: 36%;
+  height: 280%;
+  transform: rotate(24deg);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 226, 240, 0.8) 45%,
+    rgba(212, 175, 55, 0.36) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 0.7s ease;
+}
+
+.shine-card:hover::after {
+  left: 130%;
 }
