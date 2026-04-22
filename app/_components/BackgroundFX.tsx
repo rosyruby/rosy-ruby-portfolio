@@ -2,149 +2,60 @@
 
 import { motion } from "framer-motion";
 
-const petalPath =
-  "M49.3 4.8C57.8 9.5 71.2 26.8 74 43.7C76.6 59.4 69.4 73.6 56.8 82.5C43.4 92 24.3 96.2 13.2 86C2.5 76.2 3.6 57.6 8.5 42.8C13 29.1 22.8 13 35.2 7.1C40.8 4.5 44.8 2.4 49.3 4.8Z";
+const sparkleStarClip =
+  "polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%)";
 
-const floatingPetalShapes = [
-  {
-    size: 92,
-    left: "7%",
-    top: "14%",
-    duration: 18,
-    delay: 0,
-    rotate: 12,
-    opacity: 0.22,
-    fill: "rgba(255, 196, 220, 0.75)",
-  },
-  {
-    size: 72,
-    left: "84%",
-    top: "22%",
-    duration: 22,
-    delay: 1.2,
-    rotate: -8,
-    opacity: 0.18,
-    fill: "rgba(224, 17, 95, 0.22)",
-  },
-  {
-    size: 82,
-    left: "18%",
-    top: "72%",
-    duration: 20,
-    delay: 0.8,
-    rotate: 6,
-    opacity: 0.16,
-    fill: "rgba(255, 214, 231, 0.78)",
-  },
-  {
-    size: 64,
-    left: "88%",
-    top: "78%",
-    duration: 16,
-    delay: 2.1,
-    rotate: -15,
-    opacity: 0.2,
-    fill: "rgba(199, 0, 57, 0.2)",
-  },
+const rubySparkleFills = [
+  "linear-gradient(135deg, #ffffff 0%, #ff9eb5 35%, #e0115f 70%, #7a0835 100%)",
+  "linear-gradient(140deg, #fff5f7 0%, #ff6b9d 40%, #c70039 75%, #4a1020 100%)",
+  "linear-gradient(130deg, #ffe8f0 0%, #f43f7a 45%, #991245 100%)",
+  "linear-gradient(145deg, #ffffff 0%, #ffb3c9 30%, #d4145c 65%, #5c0a22 100%)",
+  "linear-gradient(125deg, #fffafc 0%, #ff8fab 42%, #b0104a 78%, #3d0618 100%)",
+  "linear-gradient(150deg, #ffffff 0%, #ffc8dc 28%, #e91e63 60%, #880e4f 100%)",
 ];
 
-const floatingPetals = [
-  { w: 42, h: 24, left: "28%", top: "20%", duration: 14, delay: 0.4, rotate: -18, opacity: 0.26 },
-  { w: 38, h: 20, left: "70%", top: "36%", duration: 17, delay: 1.4, rotate: 22, opacity: 0.22 },
-  { w: 34, h: 18, left: "40%", top: "82%", duration: 13, delay: 0.7, rotate: -12, opacity: 0.2 },
-  { w: 36, h: 22, left: "82%", top: "60%", duration: 19, delay: 1.7, rotate: 16, opacity: 0.24 },
-];
+/** 固定位置で明滅・きらめきのみ（落下なし） */
+const rubyTwinkles = Array.from({ length: 72 }, (_, i) => ({
+  left: `${((i * 37 + (i % 7) * 17) % 90) + 5}%`,
+  top: `${((i * 23 + (i % 6) * 19) % 88) + 4}%`,
+  size: 5 + (i % 7) * 2.15,
+  delay: (i * 0.21) % 6.5,
+  pulse: 3.8 + (i % 11) * 0.5,
+  fillIndex: (i * 3) % rubySparkleFills.length,
+}));
 
-const sparkles = [
-  { size: 10, left: "16%", top: "10%", delay: 0.1, duration: 3.5 },
-  { size: 8, left: "75%", top: "18%", delay: 0.8, duration: 4.2 },
-  { size: 12, left: "88%", top: "66%", delay: 0.5, duration: 3.2 },
-  { size: 9, left: "32%", top: "74%", delay: 1.4, duration: 3.9 },
-  { size: 7, left: "56%", top: "46%", delay: 0.9, duration: 4.5 },
-];
+const softGlow =
+  "drop-shadow(0 0 8px rgba(224, 17, 95, 0.55)) drop-shadow(0 0 18px rgba(233, 30, 99, 0.28))";
 
 export default function BackgroundFX() {
   return (
-    <div className="pointer-events-none absolute inset-0 z-0">
-      {floatingPetalShapes.map((petal, index) => (
-        <motion.svg
-          key={`petal-shape-${index}`}
-          className="absolute"
+    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      {rubyTwinkles.map((tw, index) => (
+        <motion.span
+          key={`ruby-twinkle-${index}`}
+          className="absolute will-change-transform"
           style={{
-            width: petal.size,
-            height: petal.size,
-            left: petal.left,
-            top: petal.top,
-            opacity: petal.opacity,
-            filter: "blur(0.2px)",
+            width: tw.size,
+            height: tw.size,
+            left: tw.left,
+            top: tw.top,
+            background: rubySparkleFills[tw.fillIndex],
+            clipPath: sparkleStarClip,
+            filter: softGlow,
           }}
           animate={{
-            y: [0, 24, 52, 84, 120],
-            x: [0, 8, -6, 10, 2],
-            rotate: [petal.rotate, petal.rotate + 10, petal.rotate + 18, petal.rotate + 24],
+            scale: [0.78, 1.38, 0.88, 1.22, 0.78],
+            opacity: [0.28, 0.9, 0.38, 0.85, 0.3],
+            rotate: [0, 18, -10, 14, 0],
           }}
           transition={{
-            duration: petal.duration,
+            duration: tw.pulse,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: petal.delay,
-          }}
-          viewBox="0 0 80 92"
-        >
-          <path d={petalPath} fill={petal.fill} />
-        </motion.svg>
-      ))}
-
-      {floatingPetals.map((petal, index) => (
-        <motion.span
-          key={`petal-${index}`}
-          className="absolute bg-gradient-to-br from-[#ffd5e7] to-[#f19abc]"
-          style={{
-            width: petal.w,
-            height: petal.h,
-            left: petal.left,
-            top: petal.top,
-            opacity: petal.opacity,
-            borderRadius: "100% 30% 100% 30%",
-          }}
-          animate={{
-            y: [0, -16, 6, 0],
-            x: [0, 5, -3, 0],
-            rotate: [petal.rotate, petal.rotate + 16, petal.rotate - 10, petal.rotate],
-          }}
-          transition={{
-            duration: petal.duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: petal.delay,
-          }}
-        />
-      ))}
-
-      {sparkles.map((sparkle, index) => (
-        <motion.span
-          key={`sparkle-${index}`}
-          className="absolute"
-          style={{
-            width: sparkle.size,
-            height: sparkle.size,
-            left: sparkle.left,
-            top: sparkle.top,
-            background: "linear-gradient(135deg, #ffffff 0%, #f7cbe1 100%)",
-            clipPath:
-              "polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%)",
-            opacity: 0.9,
-          }}
-          animate={{ scale: [1, 1.8, 1], opacity: [0.3, 0.95, 0.3] }}
-          transition={{
-            duration: sparkle.duration,
-            repeat: Infinity,
-            delay: sparkle.delay,
-            ease: "easeInOut",
+            delay: tw.delay,
           }}
         />
       ))}
     </div>
   );
 }
-

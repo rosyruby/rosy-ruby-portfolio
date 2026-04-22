@@ -7,7 +7,7 @@
     "heroDescription": "自作ツールやリンクをまとめたポートフォリオサイトです。",
     "sections": {
       "about": "About",
-      "tools": "Tools",
+      "tools": "Web Tools",
       "websites": "Websites",
       "links": "Links",
       "contact": "Contact"
@@ -17,12 +17,18 @@
       "career": "一部上場企業にてエンジニアとして6年間勤務後、現在は個人開発フリーランスとして活動中。技術力をベースにAIを駆使して、日常を便利に、そして華やかに彩るプロダクトを制作しています。",
       "skillsTitle": "専門スキル",
       "skills": [
-        "Automation: Google Apps Script (GAS) / Python",
-        "AI Integration: Gemini API / AIを活用した効率化",
-        "Modern Dev Tools: Cursor / Next.js / Tailwind CSS",
-        "Productivity: Notion テンプレート制作 / 業務改善"
+        "業務の自動化 — スプレッドシート連携など、GAS（Google Apps Script）と Python で繰り返し作業や外部連携を自動化。",
+        "AI の活用 — Gemini API などを組み込み、要約・分類・下書き作成など、作業時間の短縮と品質の安定に。",
+        "Web フロント — TypeScript / React、Next.js、Tailwind CSS でモダンで使いやすい UI を実装。",
+        "SEO — 見出し構造・メタ情報・表示速度など、検索結果に伝わりやすいサイトづくり。",
+        "データ / SQL — SQL を使った取得・集計・設計を含む、データまわりの実装。",
+        "ライティング・翻訳 — 解説記事などの執筆、英語と日本語の翻訳・ローカライズ。",
+        "Notion・業務改善 — テンプレート制作と、手順・フローの整理による生産性向上。"
       ],
-      "fastCoding": "Cursorを駆使した高速コーディング可能"
+      "fastCoding": "エディタ Cursor を軸に、設計から実装まで短期間で素早く進められます。"
+    },
+    "reviews": {
+      "reviewerLabel": "Notion テンプレート利用者"
     },
     "contact": {
       "description": "ご相談・制作依頼・コラボのお問い合わせは、こちらからお気軽にご連絡ください。",
@@ -52,7 +58,7 @@
         "description": "必要なユーティリティをすばやく組み立てる、スタイル生成サポート。"
       },
       {
-        "title": "Notionテンプレート",
+        "title": "Notion Templates",
         "description": "学習や制作管理に使える、実用的なNotionテンプレート集。"
       },
       {
@@ -63,7 +69,7 @@
     "websites": [
       {
         "title": "世界一やさしいIT用語解説",
-        "description": "初心者向けにIT用語をかみくだいて説明する、やさしい解説サイト。"
+        "description": "初心者向けにIT用語をわかりやすく説明する、やさしい解説サイト。"
       },
       {
         "title": "うごく英単語サイト",
@@ -89,12 +95,18 @@
       "career": "Full-stack Engineer with 6 years of experience at a listed company, involved in large-scale system development while also running RosyRuby as an indie creator. Built on solid production-grade engineering, I craft products that make daily life a little more efficient and a little more delightful.",
       "skillsTitle": "Core Expertise",
       "skills": [
-        "Automation: Google Apps Script (GAS) / Python",
-        "AI Integration: Gemini API / AI-powered workflows",
-        "Modern Dev Tools: Cursor / Next.js / Tailwind CSS",
-        "Productivity: Notion template design / workflow improvement"
+        "Automation — GAS (Google Apps Script) and Python for repeatable tasks, integrations, and spreadsheet workflows.",
+        "AI in production — Gemini API and AI-assisted flows for summarization, classification, drafting, and efficiency.",
+        "Front-end — TypeScript / React, Next.js, and Tailwind CSS for modern, approachable UIs.",
+        "SEO — structure, metadata, and performance tuned so content is easier to discover and read in search.",
+        "Data & SQL — SQL-backed querying, reporting, and thoughtful data modeling where it matters.",
+        "Writing & translation — clear explanatory content plus EN ⇄ JP translation and localization.",
+        "Productivity — Notion templates and practical workflow improvements for teams and individuals."
       ],
-      "fastCoding": "Fast shipping with Cursor-driven coding workflows"
+      "fastCoding": "Cursor-first development: moving quickly from idea to shipped UI with tight iteration."
+    },
+    "reviews": {
+      "reviewerLabel": "Notion template user"
     },
     "contact": {
       "description": "For inquiries, project requests, or collaborations, feel free to contact me anytime.",

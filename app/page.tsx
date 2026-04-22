@@ -14,6 +14,8 @@ import {
   Mail,
   NotebookTabs,
   Link as LinkIcon,
+  Languages,
+  LayoutTemplate,
   Newspaper,
   Package,
   PenLine,
@@ -22,6 +24,9 @@ import {
   Sparkles,
   SquareArrowOutUpRight,
   Rocket,
+  Search,
+  Database,
+  Workflow,
   Wrench,
   X,
 } from "lucide-react";
@@ -30,9 +35,12 @@ import {
   SiNotion,
   SiPython,
   SiCanva,
+  SiGithubcopilot,
   SiOpenai,
   SiJavascript,
   SiHtml5,
+  SiReact,
+  SiTypescript,
 } from "react-icons/si";
 import dictionary from "@/data/dictionary.json";
 
@@ -59,18 +67,18 @@ export default function Home() {
     {
       title: t.tools[0].title,
       description: t.tools[0].description,
-      url: "https://komawari-timetable.com/",
-      icon: Gem,
+      url: "https://komawari-timetable.rosy-ruby.com/",
+      icon: Wrench,
       image: "/komawari.png",
       cardClass:
         "border-[#ffb3cd] bg-gradient-to-br from-[#fff3f8]/85 to-[#ffe8f1]/75 hover:shadow-[0_0_32px_rgba(224,17,95,0.35)]",
-      iconClass: "text-[#e0115f]",
+      iconClass: "text-[#eab308]",
       urlClass: "text-[#c70039]",
     },
     {
       title: t.tools[1].title,
       description: t.tools[1].description,
-      url: "https://tailwind-color-tool.vercel.app/",
+      url: "https://tailwind-color-tool.rosy-ruby.com/",
       icon: Brush,
       image: "/tailwind.png",
       cardClass:
@@ -95,7 +103,7 @@ export default function Home() {
     {
       title: t.websites[0].title,
       description: t.websites[0].description,
-      url: "https://friendly-it-guide.com/",
+      url: "https://friendly-it-guide.rosy-ruby.com/",
       image: "/it-terms-showcase.svg",
       cardClass:
         "border-[#d8c0ff] bg-gradient-to-br from-[#f6efff]/90 to-[#ebe1ff]/80 hover:shadow-[0_0_34px_rgba(137,73,255,0.32)]",
@@ -122,7 +130,18 @@ export default function Home() {
     { id: "openai", label: "OpenAI", icon: SiOpenai, color: "text-[#5f8f7a]" },
     { id: "javascript", label: "JavaScript", icon: SiJavascript, color: "text-[#d6b300]" },
     { id: "html", label: "HTML", icon: SiHtml5, color: "text-[#e46a3a]" },
+    { id: "typescript", label: "TypeScript", icon: SiTypescript, color: "text-[#3178c6]" },
+    { id: "react", label: "React", icon: SiReact, color: "text-[#087ea4]" },
+    { id: "seo", label: "SEO", icon: Search, color: "text-[#7c3aed]" },
+    { id: "sql", label: "SQL", icon: Database, color: "text-[#336791]" },
+    { id: "writing", label: "Writing", icon: PenLine, color: "text-[#b45309]" },
+    { id: "translate", label: "Translation", icon: Languages, color: "text-[#0369a1]" },
+    { id: "github-copilot", label: "GitHub Copilot", icon: SiGithubcopilot, color: "text-[#6e40c9]" },
+    { id: "dify", label: "Dify", icon: Workflow, color: "text-[#1c64f2]" },
+    { id: "microcms", label: "microCMS", icon: LayoutTemplate, color: "text-[#1a1a1a]" },
   ];
+
+  const reviewAuthorLabel = dictionary[locale].reviews.reviewerLabel;
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_15%_-6%,#ffcade_0%,transparent_32%),radial-gradient(circle_at_86%_8%,#ffc3d8_0%,transparent_34%),linear-gradient(145deg,#fff9fb_0%,#ffe7f1_55%,#ffdbe9_100%)] px-4 py-6 sm:px-8 sm:py-10">
@@ -182,60 +201,9 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="mb-10">
-          <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[#7a0835]">
-            <BadgeCheck className="h-5 w-5 text-[#d4af37]" />
-            {t.sections.about}
-          </h3>
-          <article className="glass-card relative overflow-hidden rounded-[2rem] border border-[#ef88ad] bg-gradient-to-br from-[#fff7fa]/90 to-[#ffe7f1]/78 p-6 sm:p-8">
-            <div className="grid items-center gap-6 md:grid-cols-[170px_1fr]">
-              <div className="mx-auto h-36 w-36 overflow-hidden rounded-full border-2 border-[#d4af3775] bg-gradient-to-br from-[#ffe3ee] to-[#ffd2e5] p-1 shadow-[0_10px_26px_rgba(224,17,95,0.2)]">
-                <Image
-                  src="/faceup.png"
-                  alt="RosyRuby portrait"
-                  width={144}
-                  height={144}
-                  className="h-full w-full rounded-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="font-display text-2xl text-[#661533] sm:text-3xl">{t.about.title}</h4>
-                <p className="mt-3 text-sm leading-7 text-[#6f2a4a] sm:text-base">{t.about.career}</p>
-                <p className="mt-5 text-sm font-semibold tracking-wide text-[#8a3559]">
-                  {t.about.skillsTitle}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {aboutSkillChips.map((chip) => {
-                    const Icon = chip.icon;
-                    return (
-                      <motion.div
-                        key={chip.id}
-                        whileHover={{ y: -3, scale: 1.04 }}
-                        transition={{ type: "spring", stiffness: 320, damping: 22 }}
-                        className="inline-flex items-center gap-2 rounded-2xl border border-[#e7bad0] bg-white/80 px-3 py-2"
-                      >
-                        <Icon className={`h-4 w-4 ${chip.color}`} />
-                        <span className="text-xs font-semibold text-[#7b2b50] sm:text-sm">{chip.label}</span>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-                <ul className="mt-4 space-y-2 text-sm leading-7 text-[#6f2a4a] sm:text-base">
-                  {t.about.skills.map((skill) => (
-                    <li key={skill}>- {skill}</li>
-                  ))}
-                </ul>
-                <p className="mt-4 inline-flex rounded-full border border-[#d4af37aa] bg-[#fff5df] px-4 py-1.5 text-xs font-semibold text-[#7a4e1c] sm:text-sm">
-                  {t.about.fastCoding}
-                </p>
-              </div>
-            </div>
-          </article>
-        </section>
-
         <section className="mb-8">
           <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[#7a0835]">
-            <Wrench className="h-5 w-5 text-[#d4af37]" />
+            <Gem className="h-5 w-5 text-[#e0115f]" />
             {t.sections.tools}
           </h3>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -292,7 +260,7 @@ export default function Home() {
 
         <section className="mb-8">
           <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[#7a0835]">
-            <NotebookTabs className="h-5 w-5 text-[#d4af37]" />
+            <Gem className="h-5 w-5 text-[#e0115f]" />
             {t.tools[2].title}
           </h3>
           <article className="glass-card shine-card relative overflow-hidden rounded-[2rem] border border-[#c6f3dc] bg-gradient-to-br from-[#edfff5]/90 to-[#dbfce8]/80 p-6 transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_32px_rgba(30,171,111,0.32)] sm:p-8">
@@ -323,7 +291,7 @@ export default function Home() {
 
         <section className="mb-8">
           <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[#7a0835]">
-            <Sparkle className="h-5 w-5 text-[#d4af37]" />
+            <Gem className="h-5 w-5 text-[#e0115f]" />
             {t.sections.websites}
           </h3>
           <div className="grid gap-5 lg:grid-cols-2">
@@ -365,35 +333,35 @@ export default function Home() {
         </section>
         <section className="mb-8">
           <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[#7a0835]">
-            <Sparkles className="h-5 w-5 text-[#d4af37]" />
+            <Gem className="h-5 w-5 text-[#e0115f]" />
             {locale === "jp" ? "Reviews" : "Reviews"}
           </h3>
           <div className="grid gap-4 md:grid-cols-3">
             {[
               {
-                name: "Komawari ユーザー",
+                name: reviewAuthorLabel,
                 text:
                   locale === "jp"
                     ? "This gives me a great high level view of my projects and then my ability to access the comments right there on the dashboard to update my boss is an excellent feature. I am new to Notion but already love this template."
                     : "This gives me a great high level view of my projects and then my ability to access the comments right there on the dashboard to update my boss is an excellent feature. I am new to Notion but already love this template.",
               },
               {
-                name: "デザイン好きの学習者",
+                name: reviewAuthorLabel,
                 text:
                   locale === "jp"
                     ? "This template is nicely categorised and very helpful with planning everything for the baby. It's not too chaotic, but has also everything in it."
                     : "This template is nicely categorised and very helpful with planning everything for the baby. It's not too chaotic, but has also everything in it.",
               },
               {
-                name: "Notion テンプレート利用者",
+                name: reviewAuthorLabel,
                 text:
                   locale === "jp"
                     ? "GOOD TEMPLATE FOR ME TO USE AS ADMIN ASSISTANT IN MY COMPANY"
                     : "GOOD TEMPLATE FOR ME TO USE AS ADMIN ASSISTANT IN MY COMPANY",
               },
-            ].map((review) => (
+            ].map((review, index) => (
               <article
-                key={review.name}
+                key={`review-${index}`}
                 className="glass-card relative overflow-hidden rounded-2xl border border-[#f0c5dd] p-4 text-sm text-[#6f2a4a]"
               >
                 <p className="leading-6">“{review.text}”</p>
@@ -403,9 +371,60 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mb-10">
+          <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[#7a0835]">
+            <Gem className="h-5 w-5 text-[#e0115f]" />
+            {t.sections.about}
+          </h3>
+          <article className="glass-card relative overflow-hidden rounded-[2rem] border border-[#ef88ad] bg-gradient-to-br from-[#fff7fa]/90 to-[#ffe7f1]/78 p-6 sm:p-8">
+            <div className="grid items-center gap-6 md:grid-cols-[170px_1fr]">
+              <div className="mx-auto h-36 w-36 overflow-hidden rounded-full border-2 border-[#d4af3775] bg-gradient-to-br from-[#ffe3ee] to-[#ffd2e5] p-1 shadow-[0_10px_26px_rgba(224,17,95,0.2)]">
+                <Image
+                  src="/faceup.png"
+                  alt="RosyRuby portrait"
+                  width={144}
+                  height={144}
+                  className="h-full w-full rounded-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 className="font-display text-2xl text-[#661533] sm:text-3xl">{t.about.title}</h4>
+                <p className="mt-3 text-sm leading-7 text-[#6f2a4a] sm:text-base">{t.about.career}</p>
+                <p className="mt-5 text-sm font-semibold tracking-wide text-[#8a3559]">
+                  {t.about.skillsTitle}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {aboutSkillChips.map((chip) => {
+                    const Icon = chip.icon;
+                    return (
+                      <motion.div
+                        key={chip.id}
+                        whileHover={{ y: -3, scale: 1.04 }}
+                        transition={{ type: "spring", stiffness: 320, damping: 22 }}
+                        className="inline-flex items-center gap-2 rounded-2xl border border-[#e7bad0] bg-white/80 px-3 py-2"
+                      >
+                        <Icon className={`h-4 w-4 ${chip.color}`} />
+                        <span className="text-xs font-semibold text-[#7b2b50] sm:text-sm">{chip.label}</span>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+                <ul className="mt-4 space-y-2 text-sm leading-7 text-[#6f2a4a] sm:text-base">
+                  {t.about.skills.map((skill) => (
+                    <li key={skill}>- {skill}</li>
+                  ))}
+                </ul>
+                <p className="mt-4 inline-flex rounded-full border border-[#d4af37aa] bg-[#fff5df] px-4 py-1.5 text-xs font-semibold text-[#7a4e1c] sm:text-sm">
+                  {t.about.fastCoding}
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+
         <section className="mb-8">
           <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[#7a0835]">
-            <LinkIcon className="h-5 w-5 text-[#d4af37]" />
+            <Gem className="h-5 w-5 text-[#e0115f]" />
             {t.sections.links}
           </h3>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
@@ -429,7 +448,7 @@ export default function Home() {
 
         <section className="mb-8">
           <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-[#7a0835]">
-            <Mail className="h-5 w-5 text-[#d4af37]" />
+            <Gem className="h-5 w-5 text-[#e0115f]" />
             {t.sections.contact}
           </h3>
           <p className="mb-4 text-sm leading-7 text-[#6f2a4a] sm:text-base">{t.contact.description}</p>
