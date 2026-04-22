@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Playfair_Display } from "next/font/google";
 import Script from "next/script";
+import { getBaseUrl } from "@/lib/get-base-url";
 import "./globals.css";
+
+const siteUrl = getBaseUrl();
 
 const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-6SBG7K5PR8";
@@ -17,10 +20,19 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "RosyRuby Portfolio",
   description: "Soft minimal portfolio by RosyRuby",
   icons: {
     icon: "/favicon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    url: "/",
+    siteName: "RosyRuby",
+    title: "RosyRuby Portfolio",
+    description: "Soft minimal portfolio by RosyRuby",
   },
 };
 
